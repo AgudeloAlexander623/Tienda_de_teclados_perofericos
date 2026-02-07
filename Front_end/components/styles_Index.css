@@ -164,6 +164,29 @@ container {
     transform: translateY(-2px);
 }
 
+/* Alias para typo común */
+.btn-secundary {
+    background-color: transparent;
+    color: var(--primary);
+    padding: 0.75rem 1.8rem;
+    border: 2px solid var(--primary);
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-secundary:hover {
+    background-color: var(--primary);
+    color: var(--bg-main);
+    box-shadow: 0 6px 20px rgba(34, 211, 238, 0.5);
+    transform: translateY(-2px);
+}
+
+
 /* ========== HERO SECTION WITH SLIDER ========== */
 .hero-section {
     position: relative;
@@ -414,6 +437,147 @@ container {
     font-size: 1rem;
 }
 
+/* ========== PRODUCT SECTIONS (KEYBOARDS, MOUSES, HEADSETS) ========== */
+.keyboards-sections,
+.mouses-section,
+.headsets-section {
+    padding: 5rem 0;
+    background: linear-gradient(180deg, var(--bg-main) 0%, rgba(15, 23, 42, 0.95) 100%);
+    position: relative;
+}
+
+.keyboards-sections::before,
+.mouses-section::before,
+.headsets-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+}
+
+.keyboards-sections .container,
+.mouses-section .container,
+.headsets-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.keyboards-sections h2,
+.mouses-section h2,
+.headsets-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.6),
+        0 0 40px rgba(168, 85, 247, 0.4);
+    animation: fadeInDown 0.6s ease;
+}
+
+/* Product Grids */
+.keyboard-grid,
+.mouses-grid,
+.headsets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+/* Product Cards */
+.keyboard-card,
+.mouses-card,
+.headsets-card {
+    background: linear-gradient(135deg, rgba(34, 211, 238, 0.05) 0%, rgba(168, 85, 247, 0.05) 100%);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.keyboard-card:hover,
+.mouses-card:hover,
+.headsets-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(34, 211, 238, 0.3);
+    border-color: var(--primary);
+}
+
+/* Card Images */
+.keyboard-card img,
+.mouses-card img,
+.headsets-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
+    transition: all 0.3s ease;
+}
+
+.keyboard-card:hover img,
+.mouses-card:hover img,
+.headsets-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Card Content */
+.keyboard-card h3,
+.mouses-card h3,
+.headsets-card h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin: 1.5rem 1.5rem 1rem;
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.4);
+}
+
+.keyboard-card p,
+.mouses-card p,
+.headsets-card p {
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0 1.5rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+/* Card Buttons */
+.keyboard-card .btn-secondary,
+.mouses-card .btn-secondary,
+.headsets-card .btn-secondary,
+.keyboard-card .btn-secundary,
+.mouses-card .btn-secundary,
+.headsets-card .btn-secundary {
+    margin: 0 1.5rem 1.5rem;
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.65rem 1.5rem;
+    font-size: 0.95rem;
+}
+
+.keyboard-card .btn-secondary:hover,
+.mouses-card .btn-secondary:hover,
+.headsets-card .btn-secondary:hover,
+.keyboard-card .btn-secundary:hover,
+.mouses-card .btn-secundary:hover,
+.headsets-card .btn-secundary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(34, 211, 238, 0.6);
+}
+
+
+/* Generic Keyboards Section (placeholder) */
+.genericKeyboards-section {
+    min-height: 100px;
+    background: linear-gradient(180deg,
+            rgba(15, 23, 42, 0.95) 0%,
+            var(--bg-main) 100%);
+}
+
 /* ========== FOOTER ========== */
 .footer {
     background: linear-gradient(135deg, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
@@ -500,6 +664,26 @@ container {
         flex-direction: column;
         text-align: center;
     }
+
+    /* Product sections responsive */
+    .keyboards-sections h2,
+    .mouses-section h2,
+    .headsets-section h2 {
+        font-size: 2rem;
+    }
+
+    .keyboard-grid,
+    .mouses-grid,
+    .headsets-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .keyboard-card img,
+    .mouses-card img,
+    .headsets-card img {
+        height: 220px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -529,5 +713,37 @@ container {
     .dot {
         width: 10px;
         height: 10px;
+    }
+
+    /* Product sections small screens */
+    .keyboards-sections,
+    .mouses-section,
+    .headsets-section {
+        padding: 3rem 0;
+    }
+
+    .keyboards-sections h2,
+    .mouses-section h2,
+    .headsets-section h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+    }
+
+    .keyboard-card img,
+    .mouses-card img,
+    .headsets-card img {
+        height: 200px;
+    }
+
+    .keyboard-card h3,
+    .mouses-card h3,
+    .headsets-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .keyboard-card p,
+    .mouses-card p,
+    .headsets-card p {
+        font-size: 0.9rem;
     }
 }
