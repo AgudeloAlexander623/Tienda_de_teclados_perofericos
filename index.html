@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Front_end/components/styles_Index.css">
     <title>NeonKeys.com</title>
 </head>
+
 <body>
     <nav class="nav-bar">
         <div class="container">
@@ -20,14 +22,50 @@
             <div class="nav-icon">
                 <a href="cart.html"><i class="fas fa-shopping-cart">Shoping</i></a>
                 <a href="login.html"><i class="fas fa-user">Login</i></a>
-                <a href="search.html"><class class="fas fa-search"></class>search</i></a>
+                <a href="search.html">
+                    <class class="fas fa-search"></class>search</i>
+                </a>
             </div>
         </div>
     </nav>
 
 
     <header class="hero-section">
-        <div class="container">
+        <div class="slider-container">
+            <div class="slider-wrapper">
+                <div class="slide active">
+                    <img src="/Front_end/components/images/cyber-monday-sales-with-man-laptop.jpg" alt="Keyboard Sale">
+                    <div class="slide-overlay"></div>
+                </div>
+                <div class="slide">
+                    <img src="/Front_end/components/images/d8fdc3c2-50bf-40c3-8b8b-3372b663d24b.jpg"
+                        alt="Custom Keyboard">
+                    <div class="slide-overlay"></div>
+                </div>
+                <div class="slide">
+                    <img src="/Front_end/components/images/fe914a2b-ed17-4beb-8593-c7b07d8cf314.jpg"
+                        alt="Mechanical Keyboard">
+                    <div class="slide-overlay"></div>
+                </div>
+            </div>
+
+            <!-- Slider Navigation Arrows -->
+            <button class="slider-arrow prev" aria-label="Previous slide">
+                <span>‹</span>
+            </button>
+            <button class="slider-arrow next" aria-label="Next slide">
+                <span>›</span>
+            </button>
+
+            <!-- Slider Dots -->
+            <div class="slider-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+
+        <div class="hero-content">
             <h1>Welcome to NeonKeys</h1>
             <p>Your one-stop shop for custom mechanical keyboards and accessories.</p>
             <a href="products.html" class="btn-primary">Shop Now</a>
@@ -61,5 +99,8 @@
             </ul>
         </div>
     </footer>
+
+    <script src="/Front_end/components/slider.js"></script>
 </body>
+
 </html>
