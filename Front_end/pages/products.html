@@ -1,11 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeonKeys-Products</title>
+    <link rel="stylesheet" href="/Front_end/components/styles_global.css">
+    <link rel="stylesheet" href="/Front_end/components/styles_products.css">
+    <title>NeonKeys - Products</title>
 </head>
+
 <body>
-    
+    <nav class="nav-bar">
+        <div class="container">
+            <a href="/index.html" class="nav-logo">NeonKeys</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/Front_end/pages/products.html" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-icon">
+                <a href="cart.html"><i class="fas fa-shopping-cart">Shoping</i></a>
+                <a href="login.html"><i class="fas fa-user">Login</i></a>
+                <a href="search.html">
+                    <class class="fas fa-search"></class>search</i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-products">
+        <h1>Our Products</h1>
+        <p>Explore our collection of premium mechanical keyboards and gaming peripherals</p>
+    </section>
+
+    <section class="filters-section">
+        <button class="filter-btn active" data-filter="all">All Products</button>
+        <button class="filter-btn" data-filter="custom-keyboard">Custom Keyboards</button>
+        <button class="filter-btn" data-filter="generic-keyboard">Generic Keyboards</button>
+        <button class="filter-btn" data-filter="mouse">Mice</button>
+        <button class="filter-btn" data-filter="headset">Headsets</button>
+        <button class="filter-btn" data-filter="accessory">Accessories</button>
+    </section>
+
+    <section class="products-catalog">
+        <div class="product-grid">
+            <!-- KEYBOARDS -->
+            <div class="product-item" data-category="custom-keyboard">
+                <img src="/Front_end/components/images/keyboard1.jpg" alt="NeonKeys Pro RGB">
+                <div class="product-info">
+                    <span class="product-category">Custom Keyboard</span>
+                    <h3>NeonKeys Pro RGB</h3>
+                    <p class="product-description">Customizable RGB mechanical keyboard with hot-swappable switches and
+                        premium aluminum frame.</p>
+                    <p class="product-price">$179.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="custom-keyboard">
+                <img src="/Front_end/components/images/keyboard2.jpg" alt="NeonKeys Lite 60%">
+                <div class="product-info">
+                    <span class="product-category">Custom Keyboard</span>
+                    <h3>NeonKeys Lite 60%</h3>
+                    <p class="product-description">Compact 60% mechanical keyboard with vibrant RGB lighting and Cherry
+                        MX switches.</p>
+                    <p class="product-price">$129.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="custom-keyboard">
+                <img src="/Front_end/components/images/keyboard3.jpg" alt="NeonKeys Custom Kit">
+                <div class="product-info">
+                    <span class="product-category">Custom Keyboard</span>
+                    <h3>NeonKeys Custom Kit</h3>
+                    <p class="product-description">Fully customizable mechanical keyboard kit for enthusiasts. Build
+                        your dream keyboard.</p>
+                    <p class="product-price">$249.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="custom-keyboard">
+                <img src="/Front_end/components/images/keyboard1.jpg" alt="Mechanical TKL">
+                <div class="product-info">
+                    <span class="product-category">Custom Keyboard</span>
+                    <h3>Mechanical TKL</h3>
+                    <p class="product-description">Tenkeyless design perfect for gamers. Features Gateron Brown switches
+                        for tactile feedback.</p>
+                    <p class="product-price">$159.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="custom-keyboard">
+                <img src="/Front_end/components/images/keyboard2.jpg" alt="Wireless Mechanical">
+                <div class="product-info">
+                    <span class="product-category">Custom Keyboard</span>
+                    <h3>Wireless Mechanical</h3>
+                    <p class="product-description">Dual-mode wireless mechanical keyboard with Bluetooth 5.0 and 2.4GHz
+                        connectivity.</p>
+                    <p class="product-price">$199.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- GENERIC KEYBOARDS -->
+            <div class="product-item" data-category="generic-keyboard">
+                <img src="/Front_end/components/images/keyboard1.jpg" alt="Logitech G915 TKL">
+                <div class="product-info">
+                    <span class="product-category">Generic Keyboard</span>
+                    <h3>Logitech G915 TKL</h3>
+                    <p class="product-description">Wireless gaming keyboard with low-profile GL switches and premium
+                        build quality.</p>
+                    <p class="product-price">$229.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="generic-keyboard">
+                <img src="/Front_end/components/images/keyboard2.jpg" alt="Razer BlackWidow V3">
+                <div class="product-info">
+                    <span class="product-category">Generic Keyboard</span>
+                    <h3>Razer BlackWidow V3</h3>
+                    <p class="product-description">Mechanical gaming keyboard with Razer Green switches and Chroma RGB
+                        lighting.</p>
+                    <p class="product-price">$139.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="generic-keyboard">
+                <img src="/Front_end/components/images/keyboard3.jpg" alt="Corsair K95 RGB Platinum">
+                <div class="product-info">
+                    <span class="product-category">Generic Keyboard</span>
+                    <h3>Corsair K95 RGB Platinum</h3>
+                    <p class="product-description">Premium mechanical keyboard with Cherry MX switches and dedicated
+                        macro keys.</p>
+                    <p class="product-price">$199.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="generic-keyboard">
+                <img src="/Front_end/components/images/keyboard1.jpg" alt="SteelSeries Apex Pro">
+                <div class="product-info">
+                    <span class="product-category">Generic Keyboard</span>
+                    <h3>SteelSeries Apex Pro</h3>
+                    <p class="product-description">Adjustable mechanical switches with OLED display and aircraft-grade
+                        aluminum frame.</p>
+                    <p class="product-price">$179.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="generic-keyboard">
+                <img src="/Front_end/components/images/keyboard2.jpg" alt="HyperX Alloy Origins">
+                <div class="product-info">
+                    <span class="product-category">Generic Keyboard</span>
+                    <h3>HyperX Alloy Origins</h3>
+                    <p class="product-description">Compact mechanical keyboard with HyperX Red switches and durable
+                        construction.</p>
+                    <p class="product-price">$109.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- MICE -->
+            <div class="product-item" data-category="mouse">
+                <img src="/Front_end/components/images/mouse1" alt="Gaming Mouse Pro">
+                <div class="product-info">
+                    <span class="product-category">Mouse</span>
+                    <h3>Gaming Mouse Pro</h3>
+                    <p class="product-description">High-precision gaming mouse with 16,000 DPI sensor and customizable
+                        RGB lighting.</p>
+                    <p class="product-price">$79.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="mouse">
+                <img src="/Front_end/components/images/mouse1" alt="Wireless Precision">
+                <div class="product-info">
+                    <span class="product-category">Mouse</span>
+                    <h3>Wireless Precision</h3>
+                    <p class="product-description">Ergonomic wireless mouse with ultra-precise tracking and long battery
+                        life.</p>
+                    <p class="product-price">$89.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="mouse">
+                <img src="/Front_end/components/images/mouse1" alt="RGB Gaming Mouse">
+                <div class="product-info">
+                    <span class="product-category">Mouse</span>
+                    <h3>RGB Gaming Mouse</h3>
+                    <p class="product-description">Lightweight gaming mouse with customizable RGB zones and programmable
+                        buttons.</p>
+                    <p class="product-price">$69.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="mouse">
+                <img src="/Front_end/components/images/mouse1" alt="Logitech G Pro X Superlight">
+                <div class="product-info">
+                    <span class="product-category">Mouse</span>
+                    <h3>Logitech G Pro X Superlight</h3>
+                    <p class="product-description">Ultra-lightweight wireless gaming mouse with HERO 25K sensor. Only 63
+                        grams.</p>
+                    <p class="product-price">$149.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="mouse">
+                <img src="/Front_end/components/images/mouse1" alt="Razer DeathAdder V3">
+                <div class="product-info">
+                    <span class="product-category">Mouse</span>
+                    <h3>Razer DeathAdder V3</h3>
+                    <p class="product-description">Ergonomic wireless gaming mouse with Focus Pro 30K optical sensor.
+                    </p>
+                    <p class="product-price">$69.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="mouse">
+                <img src="/Front_end/components/images/mouse1" alt="Logitech G Pro X Superlight">
+                <div class="product-info">
+                    <span class="product-category">Mouse</span>
+                    <h3>Logitech G Pro X Superlight</h3>
+                    <p class="product-description">Ultra-lightweight wireless gaming mouse with HERO 25K sensor. Only 63
+                        grams.</p>
+                    <p class="product-price">$149.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- HEADSETS -->
+            <div class="product-item" data-category="headset">
+                <img src="/Front_end/components/images/headsets1" alt="Premium Gaming Headset">
+                <div class="product-info">
+                    <span class="product-category">Headset</span>
+                    <h3>Premium Gaming Headset</h3>
+                    <p class="product-description">7.1 surround sound gaming headset with noise-cancelling microphone
+                        and plush ear cushions.</p>
+                    <p class="product-price">$129.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="headset">
+                <img src="/Front_end/components/images/headsets1" alt="Wireless Headset">
+                <div class="product-info">
+                    <span class="product-category">Headset</span>
+                    <h3>Wireless Headset</h3>
+                    <p class="product-description">Premium wireless headset with low-latency audio and 20-hour battery
+                        life.</p>
+                    <p class="product-price">$149.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+
+
+            <!-- ACCESSORIES -->
+            <div class="product-item" data-category="accessory">
+                <img src="/Front_end/components/images/keyboard1.jpg" alt="Custom Keycaps Set">
+                <div class="product-info">
+                    <span class="product-category">Accessory</span>
+                    <h3>Custom Keycaps Set</h3>
+                    <p class="product-description">Premium PBT keycaps with double-shot legends. Compatible with Cherry
+                        MX switches.</p>
+                    <p class="product-price">$49.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="accessory">
+                <img src="/Front_end/components/images/keyboard2.jpg" alt="Braided Cable">
+                <div class="product-info">
+                    <span class="product-category">Accessory</span>
+                    <h3>Braided Cable</h3>
+                    <p class="product-description">Detachable braided USB-C cable with aviator connector. Available in
+                        multiple colors.</p>
+                    <p class="product-price">$29.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-item" data-category="accessory">
+                <img src="/Front_end/components/images/keyboard3.jpg" alt="Wrist Rest">
+                <div class="product-info">
+                    <span class="product-category">Accessory</span>
+                    <h3>Wrist Rest</h3>
+                    <p class="product-description">Ergonomic memory foam wrist rest for enhanced comfort during long
+                        typing sessions.</p>
+                    <p class="product-price">$24.99</p>
+                    <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NeonKeys. All rights reserved.</p>
+            <ul class="footer-menu">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="terms.html">Terms of Service</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/Front_end/components/product-filters.js"></script>
 </body>
+
 </html>
