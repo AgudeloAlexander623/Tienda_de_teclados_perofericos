@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/Front_end/components/styles_global.css">
+    <link rel="stylesheet" href="/Front_end/components/styles_signup.css">
     <title>Sign Up - NeonKeys</title>
 </head>
+
 <body>
     <nav class="nav-bar">
         <div class="container">
             <a href="/index.html" class="nav-logo">NeonKeys</a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/Front_end/pages/about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="/Front_end/pages/products.html" class="nav-link">Products</a></li>
-                <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/Front_end/pages/contact.html" class="nav-link">Contact</a></li>
             </ul>
 
             <div class="nav-icon">
-                <a href="cart.html"><i class="fas fa-shopping-cart">Shoping</i></a>
-                <a href="login.html"><i class="fas fa-user">Login</i></a>
-                <a href="search.html">
-                    <class class="fas fa-search"></class>search</i>
+                <a href="/Front_end/pages/cart.html"><i class="fas fa-shopping-cart">Shopping</i></a>
+                <a href="/Front_end/pages/login.html"><i class="fas fa-user">Login</i></a>
+                <a href="/Front_end/pages/search.html">
+                    <i class="fas fa-search">Search</i>
                 </a>
             </div>
         </div>
     </nav>
 
-    <main class="signUp-container">
-        <div class="signUp-wrapper">
-            <div class="signUp-box">
-                <div class="signUp-header">
+    <main class="login-container">
+        <div class="login-wrapper">
+            <div class="login-box">
+                <div class="login-header">
                     <h1>Create Account</h1>
                     <p>Join NeonKeys and enjoy exclusive benefits</p>
                 </div>
 
-                <form class="signUp-form" id="signUpForm">
+                <form class="login-form" id="signUpForm">
                     <!-- Username Field -->
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input type="text" id="username" name="username" placeholder="Choose a username" required>
                         <span class="error-message" id="usernameError"></span>
                     </div>
+
                     <!-- Email Field -->
                     <div class="form-group">
                         <label for="email">Email</label>
@@ -74,10 +80,58 @@
                         <span class="error-message" id="confirmPasswordError"></span>
                     </div>
 
-                    <button type="submit" class="signUp-button">Sign Up</button>
+                    <!-- Sign Up Button -->
+                    <button type="submit" class="login-btn" id="signUpBtn">Create Account</button>
                 </form>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span>or continue with</span>
+                </div>
+
+                <!-- Social Login Options -->
+                <div class="social-login">
+                    <button type="button" class="social-btn google-btn" id="googleBtn">
+                        <i class="fab fa-google"></i>
+                        Google
+                    </button>
+                    <button type="button" class="social-btn github-btn" id="githubBtn">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </button>
+                </div>
+
+                <!-- Login Link -->
+                <div class="signup-link">
+                    <p>Already have an account? <a href="/Front_end/pages/login.html">Sign in here</a></p>
+                </div>
+            </div>
+
+            <!-- Illustration/Image Section -->
+            <div class="login-illustration">
+                <img src="/Front_end/components/images/keyboard2.jpg" alt="NeonKeys Keyboard">
+                <div class="illustration-overlay"></div>
             </div>
         </div>
     </main>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="toastNotification">
+        <span id="toastMessage"></span>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NeonKeys. All rights reserved.</p>
+            <ul class="footer-menu">
+                <li><a href="/Front_end/pages/privacy.html">Privacy Policy</a></li>
+                <li><a href="/Front_end/pages/terms.html">Terms of Service</a></li>
+                <li><a href="/Front_end/pages/contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="/Front_end/services/signUp.js"></script>
 </body>
+
 </html>

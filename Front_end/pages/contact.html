@@ -4,27 +4,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts-NeonKeys</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="/Front_end/components/styles_global.css">
+    <link rel="stylesheet" href="/Front_end/components/styles_about.css">
+    <title>Contact Us - NeonKeys</title>
 </head>
+
 <body>
     <nav class="nav-bar">
         <div class="container">
             <a href="/index.html" class="nav-logo">NeonKeys</a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="/Front_end/pages/about.html" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="/Front_end/pages/products.html" class="nav-link">Products</a></li>
-                <li class="nav-item"><a href="/contact.html" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="/Front_end/pages/contact.html" class="nav-link">Contact</a></li>
             </ul>
 
             <div class="nav-icon">
-                <a href="cart.html"><i class="fas fa-shopping-cart">Shoping</i></a>
-                <a href="login.html"><i class="fas fa-user">Login</i></a>
-                <a href="search.html">
-                    <class class="fas fa-search"></class>search</i>
+                <a href="/Front_end/pages/cart.html"><i class="fas fa-shopping-cart">Shopping</i></a>
+                <a href="/Front_end/pages/login.html"><i class="fas fa-user">Login</i></a>
+                <a href="/Front_end/pages/search.html">
+                    <i class="fas fa-search">Search</i>
                 </a>
             </div>
         </div>
     </nav>
+
+    <section class="page-hero">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Get in touch with our team!</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Keyboard Street<br>Tech City, TC 12345<br>United States</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567<br>Mon-Fri: 9am - 6pm EST</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>support@neonkeys.com<br>sales@neonkeys.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm<br>Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-wrapper">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="How can we help you?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us more about your inquiry..."
+                                required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 NeonKeys. All rights reserved.</p>
+            <ul class="footer-menu">
+                <li><a href="/Front_end/pages/privacy.html">Privacy Policy</a></li>
+                <li><a href="/Front_end/pages/terms.html">Terms of Service</a></li>
+                <li><a href="/Front_end/pages/contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    </script>
 </body>
+
 </html>
