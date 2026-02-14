@@ -5,6 +5,9 @@ const signUpForm = document.getElementById('signUpForm');
 const toastNotification = document.getElementById('toastNotification');
 const toastMessage = document.getElementById('toastMessage');
 
+// API Base URL
+const API_URL = 'http://localhost:3000/api';
+
 // ========== PASSWORD TOGGLE ==========
 const passwordInput = document.getElementById('password');
 const togglePasswordIcon = document.getElementById('togglePassword');
@@ -69,36 +72,103 @@ function showToast(message, type = 'error') {
 }
 
 // ========== FORM SUBMISSION ==========
-signUpForm.addEventListener('submit', (e) => {
+signUpForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     clearErrors();
 
     const email = document.getElementById('email').value.trim();
+    const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value;
     const confirmPassword = document.getElementById('confirmPassword').value;
+    const address = document.getElementById('address')?.value.trim() || null;
+    const phone = document.getElementById('phone')?.value.trim() || null;
 
     let isValid = true;
 
+    // ========== VALIDACIONES CLIENTE ==========
+    if (!username) {
+        showError('usernameError', 'El username es requerido');
+        isValid = false;
+    } else if (username.length < 3) {
+        showError('usernameError', 'El username debe tener mínimo 3 caracteres');
+        isValid = false;
+    }
+
     if (!validateEmail(email)) {
-        showError('emailError', 'Please enter a valid email or username.');
+        showError('emailError', 'Por favor ingresa un email válido');
         isValid = false;
     }
 
     if (!validatePassword(password)) {
-        showError('passwordError', 'Password must be at least 6 characters long.');
+        showError('passwordError', 'La contraseña debe tener mínimo 6 caracteres');
         isValid = false;
     }
 
     if (password !== confirmPassword) {
-        showError('confirmPasswordError', 'Passwords do not match.');
+        showError('confirmPasswordError', 'Las contraseñas no coinciden');
         isValid = false;
     }
 
-    if (isValid) {
-        // Here you would typically send the data to the server
-        showToast('Sign-up successful!', 'success');
-        signUpForm.reset();
-    } else {
-        showToast('Please fix the errors in the form.', 'error');
+    if (!isValid) {
+        return;
+    }
+
+    // ========== PETICIÓN AL BACKEND ==========
+    const signUpBtn = signUpForm.querySelector('button[type="submit"]');
+    signUpBtn.disabled = true;
+    signUpBtn.textContent = 'Registrando...';
+
+    try {
+        const response = await fetch(`${API_URL}/users/register`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                username: username,
+                email: email,
+                password: password,
+                confirmPassword: confirmPassword,
+                address: address,
+                phone: phone
+            })
+        });
+
+        const data = await response.json();
+
+        if (response.ok && data.success) {
+            // ========== GUARDAR DATOS ==========
+            if (data.token) {
+                localStorage.setItem('authToken', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
+            }
+
+            showToast('¡Registro exitoso! Redirigiendo...', 'success');
+            signUpForm.reset();
+
+            // Redirigir a inicio después de 2 segundos
+            setTimeout(() => {
+                window.location.href = '/index.html';
+            }, 2000);
+        } else {
+            // ========== MANEJAR ERRORES DEL BACKEND ==========
+            showToast(data.message || 'Error en el registro. Intenta de nuevo.', 'error');
+
+            // Mostrar errores específicos
+            if (data.message && data.message.includes('username')) {
+                showError('usernameError', data.message);
+            } else if (data.message && data.message.includes('email')) {
+                showError('emailError', data.message);
+            } else if (data.message && data.message.includes('contraseña')) {
+                showError('passwordError', data.message);
+            }
+        }
+    } catch (error) {
+        console.error('Error de registro:', error);
+        showToast('Error de conexión. Verifique su conexión a internet.', 'error');
+    } finally {
+        // ========== RE-HABILITAR BOTÓN ==========
+        signUpBtn.disabled = false;
+        signUpBtn.textContent = 'Sign Up';
     }
 });

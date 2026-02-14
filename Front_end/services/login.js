@@ -117,12 +117,12 @@ async function handleLogin(e) {
     loginBtn.textContent = 'Signing In...';
     
     try {
-        const response = await fetch(`${API_URL}/auth/login`, {
+        // ========== PETICIÓN AL BACKEND ==========
+        const response = await fetch(`${API_URL}/users/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            credentials: 'include',
             body: JSON.stringify({
                 email: email,
                 password: password
@@ -131,36 +131,39 @@ async function handleLogin(e) {
         
         const data = await response.json();
         
-        if (response.ok) {
-            // Save login data if "Remember Me" is checked
+        if (response.ok && data.success) {
+            // ========== GUARDAR DATOS ==========
+            // Guardar email si "Recuérdame" está activo
             saveLoginData(email, rememberMeCheckbox.checked);
             
-            // Store auth token
+            // Guardar token JWT
             if (data.token) {
                 localStorage.setItem('authToken', data.token);
+                localStorage.setItem('user', JSON.stringify(data.user));
             }
             
-            showToast('Login successful! Redirecting...', 'success');
+            showToast('¡Login exitoso! Redirigiendo...', 'success');
             
-            // Redirect to home or dashboard after 1.5 seconds
+            // Redirigir a inicio después de 1.5 segundos
             setTimeout(() => {
                 window.location.href = '/index.html';
             }, 1500);
         } else {
-            // Handle specific error messages from backend
-            if (data.message === 'User not found') {
-                showError('emailError', 'Email or username not found');
-            } else if (data.message === 'Invalid password') {
-                showError('passwordError', 'Incorrect password');
-            } else {
-                showToast(data.message || 'Login failed. Please try again.', 'error');
+            // ========== MANEJAR ERRORES DEL BACKEND ==========
+            showToast(data.message || 'Error en el login. Intenta de nuevo.', 'error');
+            
+            // Mostrar errores específicos si existen
+            if (data.message && data.message.includes('Email')) {
+                showError('emailError', data.message);
+            } else if (data.message && data.message.includes('contraseña')) {
+                showError('passwordError', data.message);
             }
         }
     } catch (error) {
-        console.error('Login error:', error);
-        showToast('Connection error. Please check your internet connection.', 'error');
+        console.error('Error de login:', error);
+        showToast('Error de conexión. Verifique su conexión a internet.', 'error');
     } finally {
-        // Re-enable button
+        // ========== RE-HABILITAR BOTÓN ==========
         loginBtn.disabled = false;
         loginBtn.textContent = 'Sign In';
     }
